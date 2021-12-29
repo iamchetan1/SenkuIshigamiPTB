@@ -6,18 +6,18 @@ from telegram.error import BadRequest
 from telegram.ext import CommandHandler, MessageHandler, Filters
 from telegram.utils.helpers import mention_html
 
-import EmikoRobot.modules.sql.blacklist_sql as sql
-from EmikoRobot import dispatcher, LOGGER
-from EmikoRobot.modules.disable import DisableAbleCommandHandler
-from EmikoRobot.modules.helper_funcs.chat_status import user_admin, user_not_admin
-from EmikoRobot.modules.helper_funcs.extraction import extract_text
-from EmikoRobot.modules.helper_funcs.misc import split_message
-from EmikoRobot.modules.log_channel import loggable
-from EmikoRobot.modules.warns import warn
-from EmikoRobot.modules.helper_funcs.string_handling import extract_time
-from EmikoRobot.modules.connection import connected
-from EmikoRobot.modules.sql.approve_sql import is_approved
-from EmikoRobot.modules.helper_funcs.alternate import send_message, typing_action
+import Senku.modules.sql.blacklist_sql as sql
+from Senku import dispatcher, LOGGER
+from Senku.modules.disable import DisableAbleCommandHandler
+from Senku.modules.helper_funcs.chat_status import user_admin, user_not_admin
+from Senku.modules.helper_funcs.extraction import extract_text
+from Senku.modules.helper_funcs.misc import split_message
+from Senku.modules.log_channel import loggable
+from Senku.modules.warns import warn
+from Senku.modules.helper_funcs.string_handling import extract_time
+from Senku.modules.connection import connected
+from Senku.modules.sql.approve_sql import is_approved
+from Senku.modules.helper_funcs.alternate import send_message, typing_action
 
 BLACKLIST_GROUP = 11
 
