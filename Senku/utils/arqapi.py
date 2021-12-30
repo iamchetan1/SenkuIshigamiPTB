@@ -4,15 +4,15 @@ from random import randint
 from time import time
 
 import aiohttp
-from EmikoRobot import aiohttpsession 
+from Senku import aiohttpsession 
 from aiohttp import ClientSession
 
 from google_trans_new import google_translator
 from Python_ARQ import ARQ
 from search_engine_parser import GoogleSearch
 
-from EmikoRobot import BOT_ID, OWNER_ID, ARQ_API_URL, ARQ_API_KEY
-from EmikoRobot import pbot
+from Senku import BOT_ID, OWNER_ID, ARQ_API_URL, ARQ_API_KEY
+from Senku import pbot
 
 ARQ_API = "WZQUBA-PFAZQJ-OMIINH-MIVHYM-ARQ"
 ARQ_API_KEY = "WZQUBA-PFAZQJ-OMIINH-MIVHYM-ARQ"
