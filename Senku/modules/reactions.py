@@ -1,7 +1,7 @@
 import random
 
-from EmikoRobot import dispatcher
-from EmikoRobot.modules.disable import DisableAbleCommandHandler
+from Senku import dispatcher
+from Senku.modules.disable import DisableAbleCommandHandler
 from telegram import Update
 from telegram.ext import CallbackContext
 
