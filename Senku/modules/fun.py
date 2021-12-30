@@ -269,8 +269,6 @@ dispatcher.add_handler(WEEBIFY_HANDLER)
 dispatcher.add_handler(SHOUT_HANDLER)
 dispatcher.add_handler(SANITIZE_HANDLER)
 dispatcher.add_handler(RUNS_HANDLER)
-dispatcher.add_handler(SLAP_HANDLER)
-dispatcher.add_handler(PAT_HANDLER)
 dispatcher.add_handler(ROLL_HANDLER)
 dispatcher.add_handler(TOSS_HANDLER)
 dispatcher.add_handler(SHRUG_HANDLER)
@@ -283,7 +281,6 @@ dispatcher.add_handler(TABLE_HANDLER)
 __mod_name__ = "Fun"
 __command_list__ = [
     "runs",
-    "slap",
     "roll",
     "toss",
     "shrug",
@@ -291,7 +288,6 @@ __command_list__ = [
     "rlg",
     "decide",
     "table",
-    "pat",
     "sanitize",
     "shout",
     "weebify",
@@ -299,8 +295,6 @@ __command_list__ = [
 ]
 __handlers__ = [
     RUNS_HANDLER,
-    SLAP_HANDLER,
-    PAT_HANDLER,
     ROLL_HANDLER,
     TOSS_HANDLER,
     SHRUG_HANDLER,
