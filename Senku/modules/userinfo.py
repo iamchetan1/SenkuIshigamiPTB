@@ -2,20 +2,28 @@ import html
 import re
 import os
 import requests
-import subprocess
 
 from telethon.tl.functions.channels import GetFullChannelRequest
 from telethon.tl.types import ChannelParticipantsAdmins
 from telethon import events
 
-from telegram import MAX_MESSAGE_LENGTH, ParseMode, Update
+from telegram import MAX_MESSAGE_LENGTH, ParseMode, Update, MessageEntity
 from telegram.ext import CallbackContext, CommandHandler
 from telegram.ext.dispatcher import run_async
 from telegram.error import BadRequest
 from telegram.utils.helpers import escape_markdown, mention_html
 
-from Senku import (DEV_USERS, OWNER_ID, DRAGONS, DEMONS, TIGERS, WOLVES,
-                          INFOPIC, dispatcher, sw)
+from Cutiepii_Robot import (
+    DEV_USERS,
+    OWNER_ID,
+    DRAGONS,
+    DEMONS,
+    TIGERS,
+    WOLVES,
+    INFOPIC,
+    dispatcher,
+    sw,
+)
 from Senku.__main__ import STATS, TOKEN, USER_INFO
 import Senku.modules.sql.userinfo_sql as sql
 from Senku.modules.disable import DisableAbleCommandHandler
@@ -24,7 +32,8 @@ from Senku.modules.redis.afk_redis import is_user_afk, afk_reason
 from Senku.modules.sql.users_sql import get_user_num_chats
 from Senku.modules.helper_funcs.chat_status import sudo_plus
 from Senku.modules.helper_funcs.extraction import extract_user
-from Senku import telethn as SaitamaTelethonClient, TIGERS, DRAGONS, DEMONS
+from Senku import telethn as SaitamaTelethonClient
+
 
 
 def no_by_per(totalhp, percentage):
