@@ -151,15 +151,12 @@ def __user_info__(user_id):
     text = ""
     if is_afk:
         since_afk = get_readable_time((time.time() - float(REDIS.get(f'afk_time_{user_id}'))))
-        text = "<i>This user is currently AFK!</i>"
-        text += f"\n<i>Since: {since_afk}</i>"
+        text = "This user is currently afk (away from keyboard)."
+        text += f"\nLast Seen: {since_afk} Ago."
        
     else:
-        text = "<i>This user is currently not AFK!</i>"
-    return 
-
-def __gdpr__(user_id):
-    end_afk(user_id)
+        text = "This user currently isn't afk (not away from keyboard)."
+    return text
 
 
 
