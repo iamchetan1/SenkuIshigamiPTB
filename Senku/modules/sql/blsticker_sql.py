@@ -2,7 +2,7 @@ import threading
 
 from sqlalchemy import Column, String, UnicodeText, distinct, func, Integer
 
-from EmikoRobot.modules.sql import BASE, SESSION
+from Senku.modules.sql import BASE, SESSION
 
 
 class StickersFilters(BASE):
