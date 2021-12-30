@@ -20,7 +20,7 @@ from Senku.__main__ import STATS, TOKEN, USER_INFO
 import Senku.modules.sql.userinfo_sql as sql
 from Senku.modules.disable import DisableAbleCommandHandler
 from Senku.modules.sql.global_bans_sql import is_user_gbanned
-from Senku.modules.sql.afk_redis import is_user_afk, afk_reason
+from Senku.modules.redis.afk_redis import is_user_afk, afk_reason
 from Senku.modules.sql.users_sql import get_user_num_chats
 from Senku.modules.helper_funcs.chat_status import sudo_plus
 from Senku.modules.helper_funcs.extraction import extract_user
