@@ -13,6 +13,10 @@ from Senku.utils.logger import log
 import telegram.ext as tg
 from telethon import TelegramClient
 
+from telethon.sessions import StringSession
+from telethon.sessions import MemorySession
+
+
 StartTime = time.time()
 
 # enable logging
