@@ -2,7 +2,7 @@ import threading
 import time
 from typing import Union
 from sqlalchemy import Column, String, Boolean, UnicodeText, Integer
-from EmikoRobot.modules.sql import SESSION, BASE
+from Senku.modules.sql import SESSION, BASE
 from sqlalchemy.sql.sqltypes import BigInteger
 
 
