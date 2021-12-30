@@ -2,9 +2,9 @@ import importlib
 from typing import Union
 
 from future.utils import string_types
-from EmikoRobot import dispatcher
-from EmikoRobot.modules.helper_funcs.handlers import CMD_STARTERS, SpamChecker
-from EmikoRobot.modules.helper_funcs.misc import is_module_loaded
+from Senku import dispatcher
+from Senku.modules.helper_funcs.handlers import CMD_STARTERS, SpamChecker
+from Senku.modules.helper_funcs.misc import is_module_loaded
 from telegram import ParseMode, Update
 from telegram.ext import (
     CallbackContext,
@@ -22,12 +22,12 @@ FILENAME = __name__.rsplit(".", 1)[-1]
 # If module is due to be loaded, then setup all the magical handlers
 if is_module_loaded(FILENAME):
 
-    from EmikoRobot.modules.helper_funcs.chat_status import (
+    from Senku.modules.helper_funcs.chat_status import (
         connection_status,
         is_user_admin,
         user_admin,
     )
-    from EmikoRobot.modules.sql import disable_sql as sql
+    from Senku.modules.sql import disable_sql as sql
 
     DISABLE_CMDS = []
     DISABLE_OTHER = []
