@@ -123,7 +123,9 @@ if ENV:
     WELCOME_DELAY_KICK_SEC = os.environ.get("WELCOME_DELAY_KICL_SEC", None)
     BOT_ID = int(os.environ.get("BOT_ID", None))
     ARQ_API_URL = "https://thearq.tech/"
-    ARQ_API_KEY = "BCYKVF-KYQWFM-JCMORU-RZWOFQ-ARQ"
+    ARQ_API_KEY = "AFMJDA-MQSBCE-RNSVHB-WUVNVP-ARQ"
+    REDIS_URL = os.environ.get("REDIS_URL")
+
 
     ALLOW_CHATS = os.environ.get("ALLOW_CHATS", True)
 
@@ -211,11 +213,10 @@ else:
 
 # If you forking dont remove this id, just add your id. LOL...
 
+
 DRAGONS.add(OWNER_ID)
-DRAGONS.add(2088106582)
 DEV_USERS.add(OWNER_ID)
-DEV_USERS.add(1138045685)
-DEV_USERS.add(2088106582)
+
 
 if not SPAMWATCH_API:
     sw = None
@@ -228,6 +229,18 @@ else:
         LOGGER.warning("Can't connect to SpamWatch!")
 
 from Senku.modules.sql import SESSION
+
+REDIS = StrictRedis.from_url(REDIS_URL,decode_responses=True)
+try:
+    REDIS.ping()
+    LOGGER.info("Your redis server is now alive!")
+except BaseException:
+    raise Exception("Your redis server is not alive, please check again.")
+    
+finally:
+   REDIS.ping()
+   LOGGER.info("Your redis server is now alive!")
+
 
 defaults = tg.Defaults(run_async=True)
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
