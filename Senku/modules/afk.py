@@ -158,6 +158,8 @@ def __user_info__(user_id):
         text = "This user currently isn't afk (not away from keyboard)."
     return text
 
+def __gdpr__(user_id):
+    end_afk(user_id)
 
 
 AFK_HANDLER = DisableAbleCommandHandler("afk", afk, run_async=True)
