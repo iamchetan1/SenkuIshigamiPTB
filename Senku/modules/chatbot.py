@@ -8,7 +8,7 @@ from pyrogram import filters
 from aiohttp import ClientSession
 from Senku import BOT_USERNAME as bu
 from Senku import BOT_ID, pbot, arq
-from Senku.ex_plugins.chatbot import add_chat, get_session, remove_chat
+from Senku.Extras.chatbot import add_chat, get_session, remove_chat
 from Senku.utils.pluginhelper import admins_only, edit_or_reply
 
 url = "https://acobot-brainshop-ai-v1.p.rapidapi.com/get"
