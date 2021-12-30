@@ -51,102 +51,6 @@ def sanitize(update: Update, context: CallbackContext):
     reply_animation(random.choice(fun_strings.GIFS), caption=f"*Sanitizes {name}*")
 
 
-def slap(update: Update, context: CallbackContext):
-    bot, args = context.bot, context.args
-    message = update.effective_message
-    chat = update.effective_chat
-
-    reply_text = (
-        message.reply_to_message.reply_text
-        if message.reply_to_message
-        else message.reply_text
-    )
-
-    curr_user = html.escape(message.from_user.first_name)
-    user_id = extract_user(message, args)
-
-    if user_id == bot.id:
-        temp = random.choice(fun_strings.SLAP_SAITAMA_TEMPLATES)
-
-        if isinstance(temp, list):
-            if temp[2] == "tmute":
-                if is_user_admin(chat, message.from_user.id):
-                    reply_text(temp[1])
-                    return
-
-                mutetime = int(time.time() + 60)
-                bot.restrict_chat_member(
-                    chat.id,
-                    message.from_user.id,
-                    until_date=mutetime,
-                    permissions=ChatPermissions(can_send_messages=False),
-                )
-            reply_text(temp[0])
-        else:
-            reply_text(temp)
-        return
-
-    if user_id:
-
-        slapped_user = bot.get_chat(user_id)
-        user1 = curr_user
-        user2 = html.escape(slapped_user.first_name)
-
-    else:
-        user1 = bot.first_name
-        user2 = curr_user
-
-    temp = random.choice(fun_strings.SLAP_TEMPLATES)
-    item = random.choice(fun_strings.ITEMS)
-    hit = random.choice(fun_strings.HIT)
-    throw = random.choice(fun_strings.THROW)
-
-    if update.effective_user.id == 1096215023:
-        temp = "@NeoTheKitty scratches {user2}"
-
-    reply = temp.format(user1=user1, user2=user2, item=item, hits=hit, throws=throw)
-
-    reply_text(reply, parse_mode=ParseMode.HTML)
-
-
-def pat(update: Update, context: CallbackContext):
-    bot = context.bot
-    args = context.args
-    message = update.effective_message
-
-    reply_to = message.reply_to_message if message.reply_to_message else message
-
-    curr_user = html.escape(message.from_user.first_name)
-    user_id = extract_user(message, args)
-
-    if user_id:
-        patted_user = bot.get_chat(user_id)
-        user1 = curr_user
-        user2 = html.escape(patted_user.first_name)
-
-    else:
-        user1 = bot.first_name
-        user2 = curr_user
-
-    pat_type = random.choice(("Text", "Gif", "Sticker"))
-    if pat_type == "Gif":
-        try:
-            temp = random.choice(fun_strings.PAT_GIFS)
-            reply_to.reply_animation(temp)
-        except BadRequest:
-            pat_type = "Text"
-
-    if pat_type == "Sticker":
-        try:
-            temp = random.choice(fun_strings.PAT_STICKERS)
-            reply_to.reply_sticker(temp)
-        except BadRequest:
-            pat_type = "Text"
-
-    if pat_type == "Text":
-        temp = random.choice(fun_strings.PAT_TEMPLATES)
-        reply = temp.format(user1=user1, user2=user2)
-        reply_to.reply_text(reply, parse_mode=ParseMode.HTML)
 
 
 def roll(update: Update, context: CallbackContext):
@@ -350,8 +254,6 @@ __help__ = """
 
 SANITIZE_HANDLER = DisableAbleCommandHandler("sanitize", sanitize, run_async=True)
 RUNS_HANDLER = DisableAbleCommandHandler("runs", runs, run_async=True)
-SLAP_HANDLER = DisableAbleCommandHandler("slap", slap, run_async=True)
-PAT_HANDLER = DisableAbleCommandHandler("pat", pat, run_async=True)
 ROLL_HANDLER = DisableAbleCommandHandler("roll", roll, run_async=True)
 TOSS_HANDLER = DisableAbleCommandHandler("toss", toss, run_async=True)
 SHRUG_HANDLER = DisableAbleCommandHandler("shrug", shrug, run_async=True)
