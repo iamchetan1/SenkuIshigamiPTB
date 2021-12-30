@@ -1,7 +1,7 @@
 import threading
 
-from EmikoRobot import dispatcher
-from EmikoRobot.modules.sql import BASE, SESSION
+from Senku import dispatcher
+from Senku.modules.sql import BASE, SESSION
 from sqlalchemy import (
     Column,
     ForeignKey,
