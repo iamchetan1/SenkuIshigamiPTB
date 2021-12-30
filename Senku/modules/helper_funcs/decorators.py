@@ -1,4 +1,4 @@
-from EmikoRobot.modules.disable import (
+from Senku.modules.disable import (
     DisableAbleCommandHandler,
     DisableAbleMessageHandler,
 )
@@ -9,11 +9,11 @@ from telegram.ext import (
     InlineQueryHandler,
 )
 from telegram.ext.filters import BaseFilter
-from EmikoRobot import dispatcher as d, LOGGER
+from Senku import dispatcher as d, LOGGER
 from typing import Optional, Union, List
 
 
-class EmikoHandler:
+class SenkuHandler:
     def __init__(self, d):
         self._dispatcher = d
 
@@ -54,7 +54,7 @@ class EmikoHandler:
                         group,
                     )
                 LOGGER.debug(
-                    f"[EMIKOCMD] Loaded handler {command} for function {func.__name__} in group {group}"
+                    f"[SENKUCMD] Loaded handler {command} for function {func.__name__} in group {group}"
                 )
             except TypeError:
                 if can_disable:
@@ -81,7 +81,7 @@ class EmikoHandler:
                         )
                     )
                 LOGGER.debug(
-                    f"[EMIKOCMD] Loaded handler {command} for function {func.__name__}"
+                    f"[SENKUCMD] Loaded handler {command} for function {func.__name__}"
                 )
 
             return func
@@ -110,7 +110,7 @@ class EmikoHandler:
                         MessageHandler(pattern, func, run_async=run_async), group
                     )
                 LOGGER.debug(
-                    f"[EMIKOMSG] Loaded filter pattern {pattern} for function {func.__name__} in group {group}"
+                    f"[SENKUMSG] Loaded filter pattern {pattern} for function {func.__name__} in group {group}"
                 )
             except TypeError:
                 if can_disable:
@@ -139,7 +139,7 @@ class EmikoHandler:
                 )
             )
             LOGGER.debug(
-                f"[EMIKOCALLBACK] Loaded callbackquery handler with pattern {pattern} for function {func.__name__}"
+                f"[SENKUCALLBACK] Loaded callbackquery handler with pattern {pattern} for function {func.__name__}"
             )
             return func
 
@@ -165,14 +165,14 @@ class EmikoHandler:
                 )
             )
             LOGGER.debug(
-                f"[EMIKOINLINE] Loaded inlinequery handler with pattern {pattern} for function {func.__name__} | PASSES USER DATA: {pass_user_data} | PASSES CHAT DATA: {pass_chat_data} | CHAT TYPES: {chat_types}"
+                f"[SENKUINLINE] Loaded inlinequery handler with pattern {pattern} for function {func.__name__} | PASSES USER DATA: {pass_user_data} | PASSES CHAT DATA: {pass_chat_data} | CHAT TYPES: {chat_types}"
             )
             return func
 
         return _inlinequery
 
 
-emikocmd = EmikoHandler(d).command
-emikomsg = EmikoHandler(d).message
-emikocallback = EmikoHandler(d).callbackquery
-emikoinline = EmikoHandler(d).inlinequery
+senkucmd = SenkuHandler(d).command
+senkumsg = SenkuHandler(d).message
+senkucallback = SenkuHandler(d).callbackquery
+senkuinline = SenkuHandler(d).inlinequery
