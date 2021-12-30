@@ -1,6 +1,6 @@
 import io
-from EmikoRobot.events import register
-from EmikoRobot import telethn as tbot
+from Senku.events import register
+from Senku import telethn as tbot
 from telethon import types
 from telethon import events
 from telethon.tl import functions
@@ -26,7 +26,7 @@ async def _(event):
     if event.is_group:
         if not (await is_register_admin(event.input_chat, event.message.sender_id)):
             await event.reply(
-                "🚨 Need Admin Pewer.. You can't use this command.. But you can use in my pm"
+                "🚨 Need Admin Power.. You can't use this command.. But you can use in my pm"
             )
             return
 
