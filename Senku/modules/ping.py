@@ -5,9 +5,9 @@ import requests
 from telegram import ParseMode, Update
 from telegram.ext import CallbackContext, run_async
 
-from EmikoRobot import StartTime, dispatcher
-from EmikoRobot.modules.helper_funcs.chat_status import sudo_plus
-from EmikoRobot.modules.disable import DisableAbleCommandHandler
+from Senku import StartTime, dispatcher
+from Senku.modules.helper_funcs.chat_status import sudo_plus
+from Senku.modules.disable import DisableAbleCommandHandler
 
 sites_list = {
     "Telegram": "https://api.telegram.org",
