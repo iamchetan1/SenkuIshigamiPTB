@@ -3,7 +3,7 @@ import json
 import os
 from typing import Optional
 
-from EmikoRobot import (
+from Senku import (
     DEV_USERS,
     OWNER_ID,
     DRAGONS,
@@ -13,7 +13,7 @@ from EmikoRobot import (
     WOLVES,
     dispatcher,
 )
-from EmikoRobot.modules.helper_funcs.chat_status import (
+from Senku.modules.helper_funcs.chat_status import (
     dev_plus,
     sudo_plus,
     whitelist_plus,
@@ -24,7 +24,7 @@ from telegram import ParseMode, TelegramError, Update
 from telegram.ext import CallbackContext, CommandHandler
 from telegram.utils.helpers import mention_html
 
-ELEVATED_USERS_FILE = os.path.join(os.getcwd(), "EmikoRobot/elevated_users.json")
+ELEVATED_USERS_FILE = os.path.join(os.getcwd(), "Senku/elevated_users.json")
 
 
 def check_user_id(user_id: int, context: CallbackContext) -> Optional[str]:
