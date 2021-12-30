@@ -1,7 +1,7 @@
 from typing import List, Optional
 
-from EmikoRobot import LOGGER
-from EmikoRobot.modules.users import get_user_id
+from Senku import LOGGER
+from Senku.modules.users import get_user_id
 from telegram import Message, MessageEntity
 from telegram.error import BadRequest
 
