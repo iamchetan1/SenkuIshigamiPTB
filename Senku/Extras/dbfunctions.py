@@ -13,8 +13,7 @@ from Senku.mongo import db
 notesdb = db.notes
 filtersdb = db.filters
 warnsdb = db.warns
-nsfwdb = db.nsfw
-karmadb = db.karma
+repdb = db.rep2
 chatsdb = db.chats
 usersdb = db.users
 gbansdb = db.gban
@@ -23,7 +22,6 @@ captchadb = db.captcha
 solved_captcha_db = db.solved_captcha
 captcha_cachedb = db.captcha_cache
 antiservicedb = db.antiservice
-pmpermitdb = db.pmpermit
 welcomedb = db.welcome_text
 blacklist_filtersdb = db.blacklistFilters
 pipesdb = db.pipes
@@ -239,7 +237,7 @@ async def remove_warns(chat_id: int, name: str) -> bool:
 
 
 async def get_karmas_count() -> dict:
-    chats = karmadb.find({"chat_id": {"$lt": 0}})
+    chats = repdb.find({"chat_id": {"$lt": 0}})
     if not chats:
         return {}
     chats_count = 0
@@ -254,7 +252,7 @@ async def get_karmas_count() -> dict:
 
 
 async def user_global_karma(user_id) -> int:
-    chats = karmadb.find({"chat_id": {"$lt": 0}})
+    chats = repdb.find({"chat_id": {"$lt": 0}})
     if not chats:
         return 0
     total_karma = 0
@@ -266,7 +264,7 @@ async def user_global_karma(user_id) -> int:
 
 
 async def get_karmas(chat_id: int) -> Dict[str, int]:
-    karma = karmadb.find_one({"chat_id": chat_id})
+    karma = repdb.find_one({"chat_id": chat_id})
     if not karma:
         return {}
     return karma["karma"]
@@ -283,13 +281,13 @@ async def update_karma(chat_id: int, name: str, karma: dict):
     name = name.lower().strip()
     karmas = await get_karmas(chat_id)
     karmas[name] = karma
-    karmadb.update_one(
+    repdb.update_one(
         {"chat_id": chat_id}, {"$set": {"karma": karmas}}, upsert=True
     )
 
 
 async def is_karma_on(chat_id: int) -> bool:
-    chat = karmadb.find_one({"chat_id_toggle": chat_id})
+    chat = repdb.find_one({"chat_id_toggle": chat_id})
     if not chat:
         return True
     return False
@@ -299,14 +297,14 @@ async def karma_on(chat_id: int):
     is_karma = await is_karma_on(chat_id)
     if is_karma:
         return
-    return karmadb.delete_one({"chat_id_toggle": chat_id})
+    return repdb.delete_one({"chat_id_toggle": chat_id})
 
 
 async def karma_off(chat_id: int):
     is_karma = await is_karma_on(chat_id)
     if not is_karma:
         return
-    return karmadb.insert_one({"chat_id_toggle": chat_id})
+    return repdb.insert_one({"chat_id_toggle": chat_id})
 
 
 async def is_nsfw_on(chat_id: int) -> bool:
