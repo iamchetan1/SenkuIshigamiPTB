@@ -18,13 +18,13 @@ from telegram.ext import CallbackContext, CommandHandler
 def allow_groups(update: Update, context: CallbackContext):
     args = context.args
     if not args:
-        state = "Lockdown is " + "on" if not EmikoRobot.ALLOW_CHATS else "off"
+        state = "Lockdown is " + "on" if not Senku.ALLOW_CHATS else "off"
         update.effective_message.reply_text(f"Current state: {state}")
         return
     if args[0].lower() in ["off", "no"]:
-        EmikoRobot.ALLOW_CHATS = True
+        Senku.ALLOW_CHATS = True
     elif args[0].lower() in ["yes", "on"]:
-        EmikoRobot.ALLOW_CHATS = False
+        Senku.ALLOW_CHATS = False
     else:
         update.effective_message.reply_text("Format: /lockdown Yes/No or Off/On")
         return
