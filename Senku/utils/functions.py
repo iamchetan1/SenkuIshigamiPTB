@@ -33,7 +33,7 @@ from PIL import Image, ImageDraw, ImageFilter, ImageFont
 from pyrogram.types import Message
 
 from Senku import aiohttpsession as aiosession
-from Senku.ex_plugins.dbfunctions import start_restart_stage
+from Senku.Extras.dbfunctions import start_restart_stage
 from Senku.utils.http import get, post
 
 
