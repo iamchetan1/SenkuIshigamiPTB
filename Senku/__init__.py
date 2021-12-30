@@ -112,7 +112,7 @@ if ENV:
             "Your blacklisted chats list does not contain valid integers.")
 
 else:
-    from SungJinwooRobot.config import Development as Config
+    from Senku.config import Development as Config
 
     TOKEN = Config.TOKEN
 
@@ -223,7 +223,7 @@ DEMONS = list(DEMONS)
 TIGERS = list(TIGERS)
 
 # Load at end to ensure all prev variables have been set
-from SungJinwooRobot.modules.helper_funcs.handlers import (
+from Senku.modules.helper_funcs.handlers import (
     CustomCommandHandler,
     CustomMessageHandler,
     CustomRegexHandler,
