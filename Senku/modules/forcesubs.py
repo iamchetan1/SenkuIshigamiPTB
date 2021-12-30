@@ -10,9 +10,9 @@ from pyrogram.errors.exceptions.bad_request_400 import (
 )
 from pyrogram.types import ChatPermissions, InlineKeyboardButton, InlineKeyboardMarkup
 
-from EmikoRobot import DRAGONS as SUDO_USERS
-from EmikoRobot import pbot
-from EmikoRobot.modules.sql import forceSubscribe_sql as sql
+from Senku import DRAGONS as SUDO_USERS
+from Senku import pbot
+from Senku.modules.sql import forceSubscribe_sql as sql
 
 logging.basicConfig(level=logging.INFO)
 
@@ -56,13 +56,13 @@ def _onUnMuteRequest(client, cb):
             ):
                 client.send_message(
                     chat_id,
-                    f"❗ **{cb.from_user.mention} is trying to UnMute himself but i can't unmute him because i am not an admin in this chat add me as admin again.**\n__#Leaving this chat...__",
+                    f"❗ **{cb.from_user.mention} is trying to unmute himself but I can't unmute him because I am not an admin in this chat. Add me as admin again.**\n__#Leaving this chat...__",
                 )
 
             else:
                 client.answer_callback_query(
                     cb.id,
-                    text="❗ Warning! Don't press the button when you cn talk.",
+                    text="❗ Warning! Don't press the button when you can chat.",
                     show_alert=True,
                 )
 
@@ -144,7 +144,7 @@ def config(client, message):
                     sent_message.edit("✅ **Unmuted all members who are muted by me.**")
                 except ChatAdminRequired:
                     sent_message.edit(
-                        "😕 **I am not an admin in this chat.**\n__I can't unmute members because i am not an admin in this chat make me admin with ban user permission.__"
+                        " **I am not an admin in this chat.**\n__I can't unmute members because I am not an admin in this chat. Make me admin with ban user permission.__"
                     )
             else:
                 try:
@@ -156,7 +156,7 @@ def config(client, message):
                     )
                 except UserNotParticipant:
                     message.reply_text(
-                        f"😕 **Not an Admin in the Channel**\n__I am not an admin in the [channel](https://t.me/{input_str}). Add me as a admin in order to enable ForceSubscribe.__",
+                        f" **Not an Admin in the Channel**\n__I am not an admin in the [channel](https://t.me/{input_str}). Add me as a admin in order to enable ForceSubscribe.__",
                         disable_web_page_preview=True,
                     )
                 except (UsernameNotOccupied, PeerIdInvalid):
@@ -180,7 +180,7 @@ def config(client, message):
 __help__ = """
 *Force Subscribe:*
 
-❂ Emiko can mute members who are not subscribed your channel until they subscribe
+❂ Senku can mute members who are not subscribed your channel until they subscribe
 ❂ When enabled I will mute unsubscribed members and show them a unmute button. When they pressed the button I will unmute them
 ❂*Setup*
 *Only creator*
