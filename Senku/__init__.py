@@ -9,7 +9,7 @@ from pyrogram import Client, errors
 from redis import StrictRedis
 from Senku.confing import get_bool_key, get_int_key, get_list_key, get_str_key
 from Senku.utils.logger import log
-
+from aiohttp import ClientSession
 import telegram.ext as tg
 from telethon import TelegramClient
 
