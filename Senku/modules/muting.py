@@ -2,8 +2,8 @@ import html
 import re
 from typing import Optional
 
-from EmikoRobot import LOGGER, TIGERS, dispatcher
-from EmikoRobot.modules.helper_funcs.chat_status import (
+from Senku import LOGGER, TIGERS, dispatcher
+from Senku.modules.helper_funcs.chat_status import (
     bot_admin,
     can_restrict,
     connection_status,
@@ -11,12 +11,12 @@ from EmikoRobot.modules.helper_funcs.chat_status import (
     user_admin,
     user_admin_no_reply,
 )
-from EmikoRobot.modules.helper_funcs.extraction import (
+from Senku.modules.helper_funcs.extraction import (
     extract_user,
     extract_user_and_text,
 )
-from EmikoRobot.modules.helper_funcs.string_handling import extract_time
-from EmikoRobot.modules.log_channel import loggable
+from Senku.modules.helper_funcs.string_handling import extract_time
+from Senku.modules.log_channel import loggable
 from telegram import (
     Bot, 
     Chat, 
