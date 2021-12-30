@@ -22,22 +22,22 @@ from pyrogram.types import (CallbackQuery,
                             InputTextMessageContent)
 from search_engine_parser import GoogleSearch
 
-from EmikoRobot import (
+from Senku import (
     DEV_USERS,
     EVENT_LOGS, 
     BOT_USERNAME,
     ubot2,
 )
-from EmikoRobot import pbot as app 
-from EmikoRobot import arq
-from EmikoRobot.services.keyboard import Ikb
-from EmikoRobot.utils.pluginhelper import convert_seconds_to_minutes as time_convert, fetch
-from EmikoRobot.services.tasks import _get_tasks_text, all_tasks, rm_task
-from EmikoRobot.services.types import InlineQueryResultCachedDocument
-from EmikoRobot.modules.info import get_chat_info, get_user_info
-from EmikoRobot.modules.music import download_youtube_audio
-from EmikoRobot.utils.functions import test_speedtest
-from EmikoRobot.utils.pastebin import paste
+from Senku import pbot as app 
+from Senku import arq
+from Senku.services.keyboard import Ikb
+from Senku.utils.pluginhelper import convert_seconds_to_minutes as time_convert, fetch
+from Senku.services.tasks import _get_tasks_text, all_tasks, rm_task
+from Senku.services.types import InlineQueryResultCachedDocument
+from Senku.modules.info import get_chat_info, get_user_info
+from Senku.modules.music import download_youtube_audio
+from Senku.utils.functions import test_speedtest
+from Senku.utils.pastebin import paste
 
 MESSAGE_DUMP_CHAT = EVENT_LOGS
 
