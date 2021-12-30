@@ -10,10 +10,10 @@ from telegram.ext import (
     MessageHandler,
 )
 
-import EmikoRobot.modules.sql.users_sql as sql
-from EmikoRobot import DEV_USERS, LOGGER, OWNER_ID, dispatcher
-from EmikoRobot.modules.helper_funcs.chat_status import dev_plus, sudo_plus
-from EmikoRobot.modules.sql.users_sql import get_all_users
+import Senku.modules.sql.users_sql as sql
+from Senku import DEV_USERS, LOGGER, OWNER_ID, dispatcher
+from Senku.modules.helper_funcs.chat_status import dev_plus, sudo_plus
+from Senku.modules.sql.users_sql import get_all_users
 
 USERS_GROUP = 4
 CHAT_GROUP = 5
