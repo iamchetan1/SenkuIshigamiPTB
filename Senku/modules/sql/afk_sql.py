@@ -1,6 +1,6 @@
 import threading
 
-from EmikoRobot.modules.sql import BASE, SESSION
+from Senku.modules.sql import BASE, SESSION
 from sqlalchemy import Boolean, Column, BigInteger, UnicodeText
 
 class AFK(BASE):
