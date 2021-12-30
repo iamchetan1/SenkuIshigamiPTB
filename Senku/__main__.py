@@ -109,7 +109,7 @@ KURUMI_IMG = "https://telegra.ph/file/78a95df585a55187568ee.jpg"
 SENKUSTART = "https://telegra.ph/file/c6a6564f8175d9303a61a.mp4"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
- You can support the project by contacting @excrybaby \
+ You can support the project by contacting @SenkuIshigamiXD \
  Supporting isnt always financial! \
  Those who cannot provide monetary support are welcome to help us develop the bot at ."""
 
@@ -124,7 +124,7 @@ CHAT_SETTINGS = {}
 USER_SETTINGS = {}
 
 for module_name in ALL_MODULES:
-    imported_module = importlib.import_module("EmikoRobot.modules." + module_name)
+    imported_module = importlib.import_module("Senku.modules." + module_name)
     if not hasattr(imported_module, "__mod_name__"):
         imported_module.__mod_name__ = imported_module.__name__
 
