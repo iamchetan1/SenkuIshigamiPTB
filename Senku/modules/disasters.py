@@ -18,8 +18,8 @@ from Senku.modules.helper_funcs.chat_status import (
     sudo_plus,
     whitelist_plus,
 )
-from EmikoRobot.modules.helper_funcs.extraction import extract_user
-from EmikoRobot.modules.log_channel import gloggable
+from Senku.modules.helper_funcs.extraction import extract_user
+from Senku.modules.log_channel import gloggable
 from telegram import ParseMode, TelegramError, Update
 from telegram.ext import CallbackContext, CommandHandler
 from telegram.utils.helpers import mention_html
