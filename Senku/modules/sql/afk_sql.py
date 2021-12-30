@@ -1,12 +1,13 @@
 import threading
 
 from Senku.modules.sql import BASE, SESSION
-from sqlalchemy import Boolean, Column, BigInteger, UnicodeText
+from sqlalchemy import Boolean, Column, Integer, UnicodeText
+
 
 class AFK(BASE):
     __tablename__ = "afk_users"
 
-    user_id = Column(BigInteger, primary_key=True)
+    user_id = Column(Integer, primary_key=True)
     is_afk = Column(Boolean)
     reason = Column(UnicodeText)
 
@@ -82,7 +83,9 @@ def __load_afk_users():
     global AFK_USERS
     try:
         all_afk = SESSION.query(AFK).all()
-        AFK_USERS = {user.user_id: user.reason for user in all_afk if user.is_afk}
+        AFK_USERS = {
+            user.user_id: user.reason for user in all_afk if user.is_afk
+        }
     finally:
         SESSION.close()
 
