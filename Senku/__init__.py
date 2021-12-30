@@ -12,7 +12,7 @@ from Senku.utils.logger import log
 from aiohttp import ClientSession
 import telegram.ext as tg
 from telethon import TelegramClient
-
+from Python_ARQ import ARQ
 from telethon.sessions import StringSession
 from telethon.sessions import MemorySession
 
