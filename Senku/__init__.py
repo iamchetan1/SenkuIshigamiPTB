@@ -208,13 +208,17 @@ finally:
    LOGGER.info("Your redis server is now alive!")
 
 
+from Senku.modules.sql import SESSION
+
+defaults = tg.Defaults(run_async=True)
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
-telethn = TelegramClient("SungJinwoo", API_ID, API_HASH)
-pbot = Client("SenkuPyro", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
-pgram = Client("SungJinwooRobot", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
-mongo_client = MongoClient(MONGO_DB_URI)
-db = mongo_client.SungJinwooRobot
+telethn = TelegramClient(MemorySession(), API_ID, API_HASH)
 dispatcher = updater.dispatcher
+print("[INFO]: INITIALIZING AIOHTTP SESSION")
+aiohttpsession = ClientSession()
+# ARQ Client
+print("[INFO]: INITIALIZING ARQ CLIENT")
+arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
 
 DRAGONS = list(DRAGONS) + list(DEV_USERS)
 DEV_USERS = list(DEV_USERS)
