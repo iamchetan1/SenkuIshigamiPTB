@@ -26,7 +26,7 @@ from asyncio import gather, sleep
 from pyrogram import filters
 from pyrogram.types import Message
 
-from Senku import (pgram as app, BOT_ID)
+from Senku import (pbot as app, BOT_ID)
 from Senku.utils.errors import capture_err
 from Senku.utils.filter_groups import chatbot_group
 from Senku import arq
