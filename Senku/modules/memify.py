@@ -10,14 +10,14 @@ async def handler(event):
     if event.fwd_from:
         return
     if not event.reply_to_msg_id:
-        await event.reply("`Provide Some Text To Draw! And Reply To Image/Stickers EXAMPLE: /mmf text`")
+        await event.reply("`Provide Some Text To Draw! And Reply To An Image/Sticker. EXAMPLE: /mmf text`")
         return
     reply_message = await event.get_reply_message()
     if not reply_message.media:
         await event.reply("```Reply to a image/sticker.```")
         return
     file = await bot.download_media(reply_message)
-    msg = await event.reply("```Memifying this image! (」ﾟﾛﾟ)｣ ```")
+    msg = await event.reply("```Adding text to Image")
     text = str(event.pattern_match.group(1)).strip()
     if len(text) < 1:
         return await msg.edit("You might want to try `/mmf text`")
@@ -39,7 +39,7 @@ async def drawText(image_path, text):
     if os.name == "nt":
         fnt = "ariel.ttf"
     else:
-        fnt = "./EmikoRobot/resources/default.ttf"
+        fnt = "./Senku/resources/default.ttf"
     m_font = ImageFont.truetype(fnt, int((70 / 640) * i_width))
     if ";" in text:
         upper_text, lower_text = text.split(";")
