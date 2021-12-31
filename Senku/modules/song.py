@@ -354,8 +354,8 @@ async def ytmusic(client, message: Message):
 
 
 from Senku import aiohttpsession as session
-from SungJinwooRobot.utils.errors import capture_err
-from SungJinwooRobot.utils.pastebin import paste
+from Senku.utils.errors import capture_err
+from Senku.utils.pastebin import paste
 
 
 @Client.on_message(filters.command("lyrics"))
