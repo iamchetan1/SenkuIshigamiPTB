@@ -1,6 +1,6 @@
 from Senku import pbot as app
 from Senku.utils.errors import capture_err
-from Senku.ex_plugins.dbfunctions import get_couple, save_couple
+from Senku.Extras.dbfunctions import get_couple, save_couple
 from pyrogram import filters
 import random
 from datetime import datetime
