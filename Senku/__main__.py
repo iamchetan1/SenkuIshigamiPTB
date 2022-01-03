@@ -221,10 +221,10 @@ def start(update: Update, context: CallbackContext):
                 disable_web_page_preview=False,
             )
     else:
-        update.effective_message.reply_text(
-            f"👋 Hi, I'm Senku. Nice to meet You.",
-            parse_mode=ParseMode.HTML
-       )
+        update.effective_message.reply_video(
+            SENKUSTART, caption= "<b>I have been unpetrified since:</b> <code>{}</code> \n<b>This is Exhilarating</b>"
+            .format(uptime),
+            parse_mode=ParseMode.HTML)
 
 
 def error_handler(update, context):
