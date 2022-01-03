@@ -1,5 +1,4 @@
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-from Senku import telethn as tbot
 from Senku.events import register
 from Senku import ubot2 as ubot
 from asyncio.exceptions import TimeoutError
