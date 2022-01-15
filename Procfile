@@ -1,1 +1,1 @@
-worker: python3 -m Senku
+web: python main:Senku
