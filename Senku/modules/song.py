@@ -83,7 +83,7 @@ def download_youtube_audio(arq_resp):
 async def music(_, message):
     global is_downloading
     if len(message.command) < 2:
-        return await message.reply_text("/song needs a query as argument")
+        return await message.reply_text("/song needs a query")
 
     url = message.text.split(None, 1)[1]
     if is_downloading:
