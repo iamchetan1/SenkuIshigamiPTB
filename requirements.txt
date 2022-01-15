@@ -87,5 +87,4 @@ git+https://github.com/python-telegram-bot/ptbcontrib.git
 PyYAML>5.0
 loguru
 aiofiles
-youtube_dl
-youtube_search
+pytube
