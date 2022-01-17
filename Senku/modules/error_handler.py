@@ -59,7 +59,7 @@ def error_callback(update: Update, context: CallbackContext):
         context.bot.send_document(
             OWNER_ID,
             open("error.txt", "rb"),
-            caption=f"#{context.error.identifier}\n<b>Your sugar mommy got an error for you, you cute guy:</b>\n<code>{e}</code>",
+            caption=f"#{context.error.identifier}\n<b>Error Aagya Bhai😐:</b>\n<code>{e}</code>",
             parse_mode="html",
         )
         return
@@ -67,7 +67,7 @@ def error_callback(update: Update, context: CallbackContext):
     url = f"https://nekobin.com/{key}.py"
     context.bot.send_message(
         OWNER_ID,
-        text=f"#{context.error.identifier}\n<b>Your sugar mommy got an error for you, you cute guy:</b>\n<code>{e}</code>",
+        text=f"#{context.error.identifier}\n<b>Error Aagya Bhai😐:</b>\n<code>{e}</code>",
         reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Nekobin", url=url)]]),
         parse_mode="html",
     )
