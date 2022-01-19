@@ -7,7 +7,7 @@ from Senku import dispatcher
 from Senku.modules.disable import DisableAbleCommandHandler
 
 
-@run_async
+
 def totranslate(update: Update, context: CallbackContext):
     message = update.effective_message
     problem_lang_code = []
@@ -105,7 +105,7 @@ sm,sn,so,sq,sr,st,su,sv,sw,ta,te,tg,th,tl,tr,uk,ur,uz,
 vi,xh,yi,yo,zh,zh_CN,zh_TW,zu`
 """
 
-TRANSLATE_HANDLER = DisableAbleCommandHandler(["tr", "tl"], totranslate)
+TRANSLATE_HANDLER = DisableAbleCommandHandler(["tr", "tl"], totranslate, run_async=True)
 
 dispatcher.add_handler(TRANSLATE_HANDLER)
 
