@@ -49,7 +49,7 @@ async def _(event):
         await event.reply("Error loading the languages dictionary.")
         return
     except gTTSError:
-        await event.reply("Error in Google Text-to-Speech API request !")
+        await event.reply("Error in Google Text-to-Speech API request!")
         return
     with open("k.mp3", "r"):
         await tbot.send_file(
