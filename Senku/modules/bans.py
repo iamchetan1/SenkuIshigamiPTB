@@ -535,7 +535,7 @@ def banme(update: Update, context: CallbackContext):
 
     res = update.effective_chat.ban_member(user_id)
     if res:
-        update.effective_message.reply_text("Yes, you're right! GTFO..")
+        update.effective_message.reply_text("You're not worthy to be a member of Kingdom Of Science. Goodbye!")
         return (
             "<b>{}:</b>"
             "\n#BANME"
