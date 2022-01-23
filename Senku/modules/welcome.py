@@ -203,14 +203,14 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
                 welcome_log = (
                     f"{html.escape(chat.title)}\n"
                     f"#USER_JOINED\n"
-                    f"My King just joined the chat"
+                    f"Senku just joined the chat"
                 )
                 continue
 
             # Welcome Devs
             if new_mem.id in DEV_USERS:
                 update.effective_message.reply_text(
-                    "Whoa! The Prince just joined!",
+                    "Whoa! A Chrome just joined!",
                     reply_to_message_id=reply,
                 )
                 continue
@@ -218,7 +218,7 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
             # Welcome Sudos
             if new_mem.id in DRAGONS:
                 update.effective_message.reply_text(
-                    "Huh! Emperor just joined! Stay Alert!",
+                    "Huh! Gen just joined! Stay Alert!",
                     reply_to_message_id=reply,
                 )
                 continue
@@ -226,7 +226,7 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
             # Welcome Support
             if new_mem.id in DEMONS:
                 update.effective_message.reply_text(
-                    "Huh! Someone with Captain just joined!",
+                    "Huh! Someone with Kinro just joined!",
                     reply_to_message_id=reply,
                 )
                 continue
