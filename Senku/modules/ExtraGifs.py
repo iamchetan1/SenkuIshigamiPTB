@@ -70,6 +70,15 @@ def kiss(update: Update, context: CallbackContext):
         random.choice(ExtraGifs_strings.KISS), caption=f'{first} kisses {name}')
     
 
+def slap(update: Update, context: CallbackContext):
+    message = update.effective_message
+    name = message.reply_to_message.from_user.first_name if message.reply_to_message else message.from_user.first_name
+    first = message.from_user.first_name
+    reply_animation = message.reply_to_message.reply_animation if message.reply_to_message else message.reply_animation
+    reply_animation(
+        random.choice(ExtraGifs_strings.SLAPS), caption=f'*{first} slaps {name}**')
+
+
 
 HUG_HANDLER = DisableAbleCommandHandler("hug", hug, run_async=True)
 HUGBG_HANDLER = DisableAbleCommandHandler("hugbg", hugbg, run_async=True)
@@ -78,7 +87,7 @@ HUGGG_HANDLER = DisableAbleCommandHandler("huggg", huggg, run_async=True)
 HUGBB_HANDLER = DisableAbleCommandHandler("hugbb", hugbb, run_async=True)
 PAT_HANDLER = DisableAbleCommandHandler("pat", pat, run_async=True)
 KISS_HANDLER = DisableAbleCommandHandler("kiss", kiss, run_async=True)
-
+SLAP_HANDLER = DisableAbleCommandHandler("slap", slap, run_async=True)
 
 dispatcher.add_handler(HUG_HANDLER)
 dispatcher.add_handler(HUGBG_HANDLER)
@@ -87,7 +96,8 @@ dispatcher.add_handler(HUGGG_HANDLER)
 dispatcher.add_handler(PAT_HANDLER)
 dispatcher.add_handler(HUGBB_HANDLER)
 dispatcher.add_handler(KISS_HANDLER)
+dispatcher.add_handler(SLAP_HANDLER)
 
 __handlers__ = [
-    HUGBG_HANDLER, HUGGB_HANDLER, HUGGG_HANDLER, HUGBB_HANDLER, HUG_HANDLER, PAT_HANDLER, KISS_HANDLER
+    HUGBG_HANDLER, HUGGB_HANDLER, HUGGG_HANDLER, HUGBB_HANDLER, HUG_HANDLER, PAT_HANDLER, KISS_HANDLER, SLAP_HANDLER
 ]
