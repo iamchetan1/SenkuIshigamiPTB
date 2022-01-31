@@ -411,11 +411,15 @@ def gg(update: Update, context: CallbackContext):
             imglinks.append(lmao)
 
         bot.send_media_group(chat_id=chat_id, media=imglinks, reply_to_message_id=rtmid)
-        xx.edit_text(
+try:
+      s= xx.edit_text(
             f"[{guess}]({fetchUrl})\n[Visually similar images]({imgspage})",
             parse_mode="Markdown",
             disable_web_page_preview=True,
         )
+        time.sleep(5)
+        try:
+            s.delete()
     except TelegramError as e:
         print(e)
     except Exception as exception:
