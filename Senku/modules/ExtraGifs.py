@@ -76,7 +76,7 @@ def slap(update: Update, context: CallbackContext):
     first = message.from_user.first_name
     reply_animation = message.reply_to_message.reply_animation if message.reply_to_message else message.reply_animation
     reply_animation(
-        random.choice(ExtraGifs_strings.SLAPS), caption=f'**{first} slaps {name}**')
+        random.choice(ExtraGifs_strings.SLAPS), caption=f'{first} slaps {name}')
 
 
 
