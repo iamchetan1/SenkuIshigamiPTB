@@ -88,3 +88,4 @@ PyYAML>5.0
 loguru
 aiofiles
 pytube
+yt_dlp
