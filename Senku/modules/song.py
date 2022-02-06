@@ -33,7 +33,7 @@ from youtubesearchpython import SearchVideos
 from yt_dlp import YoutubeDL
 
 from Senku import arq
-from Senku.utils.pluginhelpers import get_text, progress
+from Senku.utils.pluginhelper import get_text, progress
 from Senku import pbot as Client
 
 dl_limit = 0
