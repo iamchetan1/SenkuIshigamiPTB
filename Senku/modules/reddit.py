@@ -41,6 +41,8 @@ async def reddit(_, message):
     title = reddit.title
     image = reddit.url
     link = reddit.postLink
+    if nsfw:
+        return await m.edit("NSFW RESULTS COULD NOT BE SHOWN.")
 
     caption = f"""
 **Title:** `{title}`
