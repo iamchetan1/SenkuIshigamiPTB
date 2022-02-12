@@ -53,16 +53,16 @@ async def is_administrator(user_id: int, message):
 async def rm_deletedacc(show):
     con = show.pattern_match.group(1).lower()
     del_u = 0
-    del_status = "**Group clean, not found the deleted account.**"
+    del_status = "**This Village is clean. Can't find any dead bodies here.**"
     if con != "clean":
-        kontol = await show.reply("`Searching deleted account...`")
+        kontol = await show.reply("Searching for dead bodies...")
         async for user in show.client.iter_participants(show.chat_id):
             if user.deleted:
                 del_u += 1
                 await sleep(1)
         if del_u > 0:
             del_status = (
-                f"**Founding** `{del_u}` **Deleted account/Zombie On this group,"
+                f"**Founding** `{del_u}` **Dead body/bodies found,"
                 "\nClean it with command** `/zombies clean`"
             )
         return await kontol.edit(del_status)
@@ -71,7 +71,7 @@ async def rm_deletedacc(show):
     creator = chat.creator
     if not admin and not creator:
         return await show.reply("**Sorry you're not admin!**")
-    memek = await show.reply("`Deleting deleted account...`")
+    memek = await show.reply("Kicking Dead Bodies out of Village...")
     del_u = 0
     del_a = 0
     async for user in telethn.iter_participants(show.chat_id):
@@ -81,18 +81,18 @@ async def rm_deletedacc(show):
                     EditBannedRequest(show.chat_id, user.id, BANNED_RIGHTS)
                 )
             except ChatAdminRequiredError:
-                return await show.edit("`Not have a banned rights on this group`")
+                return await show.edit("You dont have banning rights in this village, baka`")
             except UserAdminInvalidError:
                 del_u -= 1
                 del_a += 1
             await telethn(EditBannedRequest(show.chat_id, user.id, UNBAN_RIGHTS))
             del_u += 1
     if del_u > 0:
-        del_status = f"**Cleaned** `{del_u}` **Zombies**"
+        del_status = f"**Cleaned** `{del_u}` **dead bodies out of the Village**"
     if del_a > 0:
         del_status = (
             f"**Cleaned** `{del_u}` **Zombies** "
-            f"\n`{del_a}` **Admin zombies not deleted.**"
+            f"\n`{del_a}` **Admin's dead bodies not kicked.**"
         )
     await memek.edit(del_status)
 
