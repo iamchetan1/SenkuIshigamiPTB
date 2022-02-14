@@ -154,7 +154,7 @@ def autoreverse(update: Update, context: CallbackContext):
     except Exception as exception:
         print(exception)
         
-    def ParseSauce(googleurl):
+def ParseSauce(googleurl):
     """Parse/Scrape the HTML code for the info we want."""
 
     source = opener.open(googleurl).read()
@@ -179,7 +179,6 @@ def autoreverse(update: Update, context: CallbackContext):
         results["best_guess"] = best_guess.get_text()
 
     return results
-
 
 def scam(imgspage, lim):
     """Parse/Scrape the HTML code for the info we want."""
