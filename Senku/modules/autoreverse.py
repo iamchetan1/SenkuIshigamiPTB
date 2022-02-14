@@ -189,7 +189,7 @@ def scam(imgspage, lim):
 
     return imglinks
   
-  def ParseSauce(googleurl):
+def ParseSauce(googleurl):
     """Parse/Scrape the HTML code for the info we want."""
 
     source = opener.open(googleurl).read()
@@ -214,4 +214,4 @@ def scam(imgspage, lim):
         results["best_guess"] = best_guess.get_text()
 
     return results
-        
+
