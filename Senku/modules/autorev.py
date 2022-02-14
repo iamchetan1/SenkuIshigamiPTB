@@ -203,7 +203,7 @@ def scam(imgspage, lim):
     return imglinks
   
 AUTOREV_HANDLER = DisableAbleMessageHandler(
-    Filters.regex(requests"(?i)(A husbando)"), autoreverse, friendly="autoreverse"
+    Filters.regex(requests"(?i)(a husbando)"), autoreverse, friendly="autoreverse"
 )
   
 dispatcher.add_handler(AUTOREV_HANDLER)
