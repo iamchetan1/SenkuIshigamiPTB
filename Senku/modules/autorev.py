@@ -20,7 +20,7 @@ useragent = "Mozilla/5.0 (Linux; Android 6.0.1; SM-G920V Build/MMB29K) AppleWebK
 opener.addheaders = [("User-agent", useragent)]
 
 
-def autoreverse(update: Update, context: CallbackContext):
+def fastreverse(update: Update, context: CallbackContext):
     if os.path.isfile("okgoogle.png"):
         os.remove("okgoogle.png")
 
@@ -203,7 +203,7 @@ def scam(imgspage, lim):
     return imglinks
   
 AUTOREV_HANDLER = DisableAbleMessageHandler(
-    Filters.regex(r"(?i)(a husbando)"), autoreverse, friendly="autoreverse"
+    Filters.regex(r"(?i)(w|W)"), fastreverse, friendly="fastreverse"
 )
   
 dispatcher.add_handler(AUTOREV_HANDLER)
