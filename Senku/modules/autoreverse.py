@@ -28,7 +28,7 @@ from telethon.errors import ChatAdminRequiredError, UserAdminInvalidError
 from telethon.tl.functions.channels import EditBannedRequest
 from telethon.tl.types import ChatBannedRights, ChannelParticipantsAdmins
 
-from Senku import telethn, OWNER_ID, DEV_USERS, DRAGONS, 
+from Senku import telethn, OWNER_ID, DEV_USERS, DRAGONS, DEMONS
 
 @telethn.on(events.NewMessage(pattern="^A husbando ?(.*)"))
 async def reverse(update: Update, context: CallbackContext):
