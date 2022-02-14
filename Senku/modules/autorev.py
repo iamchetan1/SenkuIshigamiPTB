@@ -13,7 +13,7 @@ from telegram import Update
 from telegram.ext import CallbackContext, run_async, Filters
 
 from Senku import dispatcher
-from Senku.modules.disable import DisableAbleCommandHandler
+from Senku.modules.disable import DisableAbleCommandHandler, DisableAbleMessageHandler
 
 opener = urllib.request.build_opener()
 useragent = "Mozilla/5.0 (Linux; Android 6.0.1; SM-G920V Build/MMB29K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.98 Mobile Safari/537.36"
