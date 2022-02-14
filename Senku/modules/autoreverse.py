@@ -33,7 +33,7 @@ from Senku import telethn, OWNER_ID, DEV_USERS, DRAGONS, DEMONS
 @telethn.on(events.NewMessage(pattern="^A husbando ?(.*)"))
 async def reverse(update: Update, context: CallbackContext):
           if os.path.isfile("okgoogle.png"):
-        os.remove("okgoogle.png")
+              os.remove("okgoogle.png")
 
     msg = update.effective_message
     chat_id = update.effective_chat.id
