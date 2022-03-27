@@ -14,6 +14,7 @@ from Senku import (
     sw,
     LOGGER,
     dispatcher,
+    JOIN_LOGGER,
 )
 from Senku.modules.helper_funcs.chat_status import (
     is_user_ban_protected,
