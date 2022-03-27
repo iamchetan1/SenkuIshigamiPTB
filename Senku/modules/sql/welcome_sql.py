@@ -2,8 +2,8 @@ import random
 import threading
 from typing import Union
 
-from SungJinwooRobot.modules.helper_funcs.msg_types import Types
-from SungJinwooRobot.modules.sql import BASE, SESSION
+from Senku.modules.helper_funcs.msg_types import Types
+from Senku.modules.sql import BASE, SESSION
 from sqlalchemy import (BigInteger, Boolean, Column, Integer, String,
                         UnicodeText)
 
