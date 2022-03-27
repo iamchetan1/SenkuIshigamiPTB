@@ -532,13 +532,17 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
                 f"<b>User</b>: {mention_html(user.id, user.first_name)}\n"
                 f"<b>ID</b>: <code>{user.id}</code>"
             )
-        elif new_mem.is_bot:
-            welcome_log = (
-                f"{html.escape(chat.title)}\n"
-                f"#BOT_ADDED\n"
-                f"<b>Bot</b>: {mention_html(new_mem.id, new_mem.first_name)}\n"
-                f"<b>ID</b>: <code>{new_mem.id}</code>"
-            )
+        elif new_mem.id == bot.id:
+                bot.send_message(
+                    JOIN_LOGGER,
+                    "#NEW_GROUP\n<b>Group name:</b> {}\n<b>ID:</b> <code>{}</code>".format(
+                        html.escape(chat.title), chat.id
+                    ),
+                    parse_mode=ParseMode.HTML,
+                )
+                update.effective_chat.send_message(
+                    "I am here to build yor Kingdom Of Science!",
+                )
         else:
             welcome_log = (
                 f"{html.escape(chat.title)}\n"
