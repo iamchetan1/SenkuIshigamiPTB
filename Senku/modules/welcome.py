@@ -1063,11 +1063,7 @@ WELCOME_MUTE_HELP = CommandHandler("welcomemutehelp", welcome_mute_help, run_asy
 BUTTON_VERIFY_HANDLER = CallbackQueryHandler(
     user_button, pattern=r"user_join_", run_async=True
 )
-CAPTCHA_BUTTON_VERIFY_HANDLER = CallbackQueryHandler(
-    user_captcha_button,
-    pattern=r"user_captchajoin_\([\d\-]+,\d+\)_\(\d{4}\)",
-    run_async=True,
-)
+
 
 dispatcher.add_handler(NEW_MEM_HANDLER)
 dispatcher.add_handler(LEFT_MEM_HANDLER)
@@ -1083,7 +1079,7 @@ dispatcher.add_handler(WELCOMEMUTE_HANDLER)
 dispatcher.add_handler(CLEAN_SERVICE_HANDLER)
 dispatcher.add_handler(BUTTON_VERIFY_HANDLER)
 dispatcher.add_handler(WELCOME_MUTE_HELP)
-dispatcher.add_handler(CAPTCHA_BUTTON_VERIFY_HANDLER)
+
 
 __mod_name__ = "Greetings"
 __command_list__ = []
