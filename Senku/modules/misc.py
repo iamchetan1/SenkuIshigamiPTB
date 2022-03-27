@@ -198,10 +198,6 @@ __help__ = """
  `/cash 1 usd inr`
  Output: `1.0 USD = 75.505 INR`
 
-*Music Modules:*
-❂ /video or /vsong (query): download video from youtube
-❂ /music or /song (query): download song from yt servers. (API BASED)
-❂ /lyrics (song name) : This plugin searches for song lyrics with song name.
 """
 
 ECHO_HANDLER = DisableAbleCommandHandler(
